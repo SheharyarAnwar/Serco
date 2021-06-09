@@ -43,16 +43,16 @@ const Index: React.FC = () => {
         // onUpdate: (v) => setWheelProgress(v.progress),
       },
     });
-    const t4 = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#trigger",
-        start: "top bottom",
-        end: "bottom bottom",
-        // markers: true,
-        scrub: true,
-        // onUpdate: (v) => setWheelProgress(v.progress),
-      },
-    });
+    // const t4 = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: "#trigger",
+    //     start: "top bottom",
+    //     end: "bottom bottom",
+    //     // markers: true,
+    //     scrub: true,
+    //     // onUpdate: (v) => setWheelProgress(v.progress),
+    //   },
+    // });
     const t5 = gsap.timeline({
       scrollTrigger: {
         trigger: "#trigger",
