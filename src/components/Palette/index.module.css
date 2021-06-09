@@ -1,0 +1,31 @@
+.color {
+  width: var(--circleSize);
+  height: var(--circleSize);
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  position: relative;
+}
+.after {
+  position: absolute;
+  content: "";
+  width: var(--circleSize);
+  height: var(--circleSize);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+.container {
+  width: 300px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: var(--circleSize);
+}
+.color:hover .after {
+  border: 2px solid var(--black);
+  width: calc(var(--circleSize) + 5px);
+  height: calc(var(--circleSize) + 5px);
+  border-radius: 50%;
+}

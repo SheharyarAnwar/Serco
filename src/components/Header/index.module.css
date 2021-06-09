@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(15px + 2%) calc(15px + 2%) calc(15px + 2%) calc(25px + 2%);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  /* left: calc(50% - 40%); */
+}
+.header h3 {
+  font-weight: 800;
+}
+.header button {
+  height: calc(55px + 7 * (100vw - 320px) / 1080);
+  width: calc(55px + 7 * (100vw - 320px) / 1080);
+  background-color: transparent;
+  outline: none;
+  border: none;
+  display: flex;
+  z-index: 12;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.header button:hover svg {
+  stroke-dasharray: 300 999;
+  opacity: 1;
+  transition: all 0.8s, opacity 0s;
+  transform: rotate(90deg);
+  visibility: visible;
+}
+.header svg {
+  stroke-width: 4px;
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.8s, opacity 0s 0.8s;
+  stroke-linecap: round;
+  stroke-dasharray: 0 999;
+  visibility: hidden;
+}
+.hamburger {
+  width: 24px;
+  height: 10px;
+  position: relative;
+  pointer-events: none;
+}
+.hamburger .before {
+  position: absolute;
+  height: 20%;
+  pointer-events: none;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  content: "";
+}
+.hamburger .after {
+  position: absolute;
+  height: 20%;
+  width: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  content: "";
+}

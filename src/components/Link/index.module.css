@@ -1,0 +1,39 @@
+.wrapper {
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+}
+.btn {
+  transition: 0s;
+  margin: 0 0 calc(20px + 3 * (100vw - 320px) / 1080);
+  font-size: calc(10px + 1 * (100vw - 320px) / 1080);
+  font-weight: 400;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: calc(2px + 3 * (100vw - 320px) / 1080);
+}
+.underline {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 8%;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  z-index: 2;
+  transition: all 0.4s linear;
+  /* background-color: red; */
+}
+.underlineoverlay {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  height: 1px;
+  transform-origin: left;
+  z-index: 1;
+  /* background-color: red; */
+}
+.btn:hover ~ .underline {
+  transform: scaleX(1);
+}
