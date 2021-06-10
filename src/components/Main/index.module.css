@@ -114,7 +114,6 @@
   width: 100vw;
   background-color: var(--grey);
   height: calc(130vh);
-  max-height: 700px;
   overflow: hidden;
   position: relative;
   z-index: 3;
@@ -165,6 +164,11 @@
 .callOfAction h2 small {
   font-size: calc(20px + 10 * (100vw - 320px) / 1080);
   display: block;
+}
+@media screen and (max-width: 1084px) {
+  .projects {
+    max-height: 700px;
+  }
 }
 @media screen and (max-width: 780px) {
   .mark {
