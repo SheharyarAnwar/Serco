@@ -33,6 +33,13 @@ function Index() {
     );
     return (v * w) / 100;
   };
+  const vh = (v: number) => {
+    var w = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
+    return (v * w) / 100;
+  };
   const diameter = Math.max(window.innerHeight, window.innerWidth) * 1.5;
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -69,9 +76,9 @@ function Index() {
 
         start:
           size === "xs"
-            ? `bottom +=${vw(50 - 15)}px`
+            ? `bottom +=${vh(30)}px`
             : size === "sm"
-            ? `bottom +=${vw(50 - 15)}px`
+            ? `bottom +=${vh(30)}px`
             : "center center",
         endTrigger: "#giga",
         end: "bottom bottom",
