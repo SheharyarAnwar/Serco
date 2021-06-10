@@ -17,6 +17,27 @@
   cursor: grab;
   overflow: hidden;
 }
+.pinner {
+  margin-left: 15vw;
+  pointer-events: none;
+  top: 50%;
+  transform: translate(0, -50%);
+  position: absolute;
+  height: 100%;
+  width: 70vw;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1005;
+}
+.pinner > div {
+  width: 70vw;
+  height: calc(300px + 300 * (100vw - 320px) / 1080);
+  max-height: 70vh;
+  padding: 0px calc(6px + 60 * (100vw - 320px) / 1080);
+  position: relative;
+}
 
 .img {
   width: 100%;

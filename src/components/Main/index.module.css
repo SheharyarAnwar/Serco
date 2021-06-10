@@ -38,6 +38,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 .blackOrigin {
   /* height: 150vw;
@@ -106,12 +107,14 @@
 .preProjects {
   width: 100vw;
   height: 70vh;
+  max-height: 500px;
   background-color: var(--grey);
 }
 .projects {
   width: 100vw;
   background-color: var(--grey);
   height: calc(130vh);
+  max-height: 700px;
   overflow: hidden;
   position: relative;
   z-index: 3;
@@ -165,8 +168,37 @@
 }
 @media screen and (max-width: 780px) {
   .mark {
-    top: calc(300px + 300 * (100vw - 320px) / 1080);
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -50%);
+  }
+  .projects {
+    max-height: 600px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .projects {
+    max-height: 500px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .tailorWrapper {
+    width: 96px;
+    height: 96px;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    top: 0;
+  }
+  .tailorWrapper h3 {
+    display: none;
+  }
+  .svgContainer {
+    width: 100%;
+    height: 100%;
+  }
+  .dashArray {
+    width: 100%;
+    height: 100%;
   }
 }

@@ -7,8 +7,9 @@
   position: absolute;
   right: 0;
   top: 14vh;
-  z-index: 1;
+  z-index: 100;
   /* transform: translateY(25%); */
+  z-index: 5;
 }
 .innerCircle {
   height: calc(120px + 50 * (100vw - 320px) / 1080);
@@ -69,7 +70,6 @@
     top: -25vw;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    z-index: 1;
   }
   .bottomBox {
     transform: rotate(90deg);
@@ -86,6 +86,5 @@
     top: -25vw;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
-    z-index: 1;
   }
 }

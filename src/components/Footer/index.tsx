@@ -18,7 +18,7 @@ function Index() {
       <div className={classes.wrapper}>
         <div className={classes.trisec}>
           <div className={classes.left}>
-            <h3 id="logo">aprisal.</h3>
+            <h3 id="logo">serco</h3>
             <p>All rights reserved</p>
             <div>
               <Palette

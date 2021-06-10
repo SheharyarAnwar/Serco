@@ -18,11 +18,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Slider from "../Slider";
 import Link from "../Link";
 import Footer from "../Footer";
+import useBreakpoint from "./../../hooks/useBreakpoint";
 function Index() {
   const ctx = React.useContext(themeContext);
   const ref = React.useRef<HTMLDivElement>(null);
   const gradient = ctx?.theme?.color;
   const [left, right] = useGradientSlicer(gradient);
+  const size = useBreakpoint();
+
+  const vw = (v: number) => {
+    var w = Math.max(
+      document.documentElement.clientWidth,
+      window.innerWidth || 0
+    );
+    return (v * w) / 100;
+  };
   const diameter = Math.max(window.innerHeight, window.innerWidth) * 1.5;
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -55,12 +65,19 @@ function Index() {
     const t3 = gsap.timeline({
       scrollTrigger: {
         trigger: "#tailortext",
-        start: "center center",
+        // start: "center center",
+
+        start:
+          size === "xs"
+            ? `bottom +=${vw(50 - 15)}px`
+            : size === "sm"
+            ? `bottom +=${vw(50 - 15)}px`
+            : "center center",
         endTrigger: "#giga",
         end: "bottom bottom",
         scrub: true,
         pin: true,
-        // pinSpacing: false,
+        pinSpacing: false,
       },
     });
     t3.play();
@@ -158,7 +175,7 @@ function Index() {
       ease: "linear",
       duration: 8,
     });
-  }, []);
+  }, [size]);
   return (
     <>
       <div className={classes.container}>
@@ -228,22 +245,23 @@ function Index() {
           style={{ backgroundColor: "var(--grey)" }}
           className={classes.projects}
         >
-          <div className={classes.mark}>
-            <svg id="mark" viewBox="0 0 100 100">
-              <defs>
-                <path
-                  id="c-1"
-                  d="M 50, 50m -25, 0 a 25,25 0 1,1 50,0 a 25,25 0 1,1-50,0"
-                ></path>
-              </defs>
-              <text fontSize="8">
-                <textPath xlinkHref="#c-1">
-                  Découvrez nos études de cas
-                </textPath>
-              </text>
-            </svg>
-          </div>
-          <Slider />
+          <Slider>
+            <div className={classes.mark}>
+              <svg id="mark" viewBox="0 0 100 100">
+                <defs>
+                  <path
+                    id="c-1"
+                    d="M 50, 50m -25, 0 a 25,25 0 1,1 50,0 a 25,25 0 1,1-50,0"
+                  ></path>
+                </defs>
+                <text fontSize="8">
+                  <textPath xlinkHref="#c-1">
+                    Découvrez nos études de cas
+                  </textPath>
+                </text>
+              </svg>
+            </div>
+          </Slider>
         </div>
         <div
           className={classes.callOfAction}

@@ -10,7 +10,7 @@ function Index() {
   return (
     <div className={classes.header}>
       <h3 id="logo-b" style={{ color }}>
-        aprisal.
+        serco
       </h3>
       <button>
         <svg id="nav-svg" viewBox="0 0 100 100">

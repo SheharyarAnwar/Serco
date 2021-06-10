@@ -77,7 +77,6 @@ const Index: React.FC = () => {
         end: "bottom bottom",
         pin: true,
         pinSpacing: false,
-        // markers: true,
       },
     });
     t1.to(ref.current, {
@@ -112,7 +111,13 @@ const Index: React.FC = () => {
 
     t5.to(ref.current, {
       y: size === "xs" ? "70%" : size === "sm" ? "70%" : undefined,
-      x: size === "xs" ? undefined : size === "sm" ? undefined : -vw(50 - 19.5),
+      x:
+        size === "xs"
+          ? undefined
+          : size === "sm"
+          ? undefined
+          : -1 * (vw(50) - vh(76 / 2)),
+      // x: size === "xs" ? undefined : size === "sm" ? undefined : -vw(50),
       rotate: "-=360_ccw",
       ease: "linear",
       duration: 1,
@@ -155,6 +160,13 @@ const Index: React.FC = () => {
       window.innerWidth || 0
     );
     return (v * w) / 100;
+  };
+  const vh = (v: number) => {
+    var h = Math.max(
+      document.documentElement.clientHeight,
+      window.innerHeight || 0
+    );
+    return (v * h) / 100;
   };
   return (
     <div ref={ref} id="wheel" className={classes.wheel}>
