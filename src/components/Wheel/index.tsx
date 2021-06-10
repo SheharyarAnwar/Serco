@@ -153,7 +153,7 @@ const Index: React.FC = () => {
         "<"
       )
       .to("#yon4", { opacity: 0 }, "<");
-  }, [size, vh, vw]);
+  }, [size]);
 
   return (
     <div ref={ref} id="wheel" className={classes.wheel}>

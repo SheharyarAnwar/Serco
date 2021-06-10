@@ -170,7 +170,8 @@ function Index() {
       ease: "linear",
       duration: 8,
     });
-  }, [size, vh]);
+    // eslint-disable-next-line
+  }, [size]);
   return (
     <>
       <div className={classes.container}>

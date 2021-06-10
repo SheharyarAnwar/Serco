@@ -11,7 +11,7 @@ const Index: React.FC = ({ children }) => {
       type: "x",
       bounds: { left: vw(15), top: 0, width: 0, height: 0 },
     });
-  }, [vw]);
+  }, []);
 
   return (
     <>
