@@ -2,21 +2,17 @@ import React, { useEffect } from "react";
 import classes from "./index.module.css";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
+import useViewport from "./../../hooks/useViewport";
 const Index: React.FC = ({ children }) => {
+  const [, vw] = useViewport();
   useEffect(() => {
     gsap.registerPlugin(Draggable);
     Draggable.create("#imgWrapper", {
       type: "x",
       bounds: { left: vw(15), top: 0, width: 0, height: 0 },
     });
-  }, []);
-  const vw = (v: number) => {
-    var w = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
-    return (v * w) / 100;
-  };
+  }, [vw]);
+
   return (
     <>
       <div className={classes.pinner}>

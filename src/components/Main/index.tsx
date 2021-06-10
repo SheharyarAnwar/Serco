@@ -19,27 +19,15 @@ import Slider from "../Slider";
 import Link from "../Link";
 import Footer from "../Footer";
 import useBreakpoint from "./../../hooks/useBreakpoint";
+import useViewport from "./../../hooks/useViewport";
 function Index() {
   const ctx = React.useContext(themeContext);
   const ref = React.useRef<HTMLDivElement>(null);
   const gradient = ctx?.theme?.color;
   const [left, right] = useGradientSlicer(gradient);
   const size = useBreakpoint();
+  const [vh, ,] = useViewport();
 
-  const vw = (v: number) => {
-    var w = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
-    return (v * w) / 100;
-  };
-  const vh = (v: number) => {
-    var w = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
-    return (v * w) / 100;
-  };
   const diameter = Math.max(window.innerHeight, window.innerWidth) * 1.5;
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -182,7 +170,7 @@ function Index() {
       ease: "linear",
       duration: 8,
     });
-  }, [size]);
+  }, [size, vh]);
   return (
     <>
       <div className={classes.container}>

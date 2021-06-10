@@ -8,12 +8,13 @@ import { ReactComponent as Design } from "../../assets/design.svg";
 import { ReactComponent as Application } from "../../assets/application.svg";
 import { ReactComponent as Marketing } from "../../assets/marketing.svg";
 import useBreakpoint from "../../hooks/useBreakpoint";
+import useViewport from "./../../hooks/useViewport";
 
 const Index: React.FC = () => {
   const ref = useRef<HTMLDivElement>(null);
   const ctx = useContext(themeContext);
   const size = useBreakpoint();
-
+  const [vh, vw] = useViewport();
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const t1 = gsap.timeline({
@@ -152,22 +153,8 @@ const Index: React.FC = () => {
         "<"
       )
       .to("#yon4", { opacity: 0 }, "<");
-  }, [size]);
+  }, [size, vh, vw]);
 
-  const vw = (v: number) => {
-    var w = Math.max(
-      document.documentElement.clientWidth,
-      window.innerWidth || 0
-    );
-    return (v * w) / 100;
-  };
-  const vh = (v: number) => {
-    var h = Math.max(
-      document.documentElement.clientHeight,
-      window.innerHeight || 0
-    );
-    return (v * h) / 100;
-  };
   return (
     <div ref={ref} id="wheel" className={classes.wheel}>
       <div
