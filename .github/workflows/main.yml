@@ -34,4 +34,4 @@ jobs:
       - name: Rename the index.html file to 200.html
         run: sudo cp ./build/index.html ./build/200.html && sudo rm ./build/index.html
       - name: Deploy on Surge
-        run: surge ./build --token ${{secrets.SURGE_TOKEN}} --domain https://serco-sherry.surge.sh
+        run: surge ./build --token ${{secrets.SURGE_TOKEN}} --domain https://serco.surge.sh
