@@ -34,7 +34,7 @@ function Index() {
           </div>
           <div className={classes.right}>
             <p>Let's talk together</p>
-            <h3>04 72 10 93 50 file@serco.pw</h3>
+            <h3>xx xx xx xx xx xxxx@serco.xx</h3>
           </div>
         </div>
         <div className={classes.rightMost}>
